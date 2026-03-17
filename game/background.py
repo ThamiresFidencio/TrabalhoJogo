@@ -1,12 +1,19 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 
-from Entity import Entity
+
+from game.entity import Entity
+from game.Const import WIN_WIDTH
 
 
 class Background(Entity):
-    def __init__(self):
-        pass
+    def __init__(self, name: str, position: tuple):
+        super().__init__(name, position)
 
-    def move(self, ):
-        pass
+    def move(self):
+
+        super().move()
+
+
+        if self.rect.right <= 0:
+            self.rect.left = WIN_WIDTH
+
+
